@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sanjagh/configs/color_application.dart';
+import 'package:sanjagh/libs/size_config.dart';
 import 'package:sanjagh/screens/profile/config/style_value_config.dart';
 
 import '../../../configs/fonts_application.dart';
@@ -34,7 +36,7 @@ class MyAdItemWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomText(text: title,fontFamily: Font.name('b'),fontSize: Font.size(2),size: 100,),
-                      const Spacer(),
+                      height(15),
                       CustomText(text: time,fontFamily: Font.name('m'),fontSize: Font.size(1) + 6,color: Colors.grey[800],),
                       height(15),
                     ],
@@ -55,7 +57,24 @@ class MyAdItemWidget extends StatelessWidget {
               ],
             ),
           ),
-          dividerProfile,
+          Container(
+            width: SizeConfig.screenWidth,
+            height: 40,
+            decoration: BoxDecoration(
+            color: AppColor.main,
+            borderRadius: BorderRadius.circular(AppSize.level1),  
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomText(text: 'حذف آگهی',color: AppColor.white,fontFamily: Font.name('m'),fontSize: Font.size(2) - 2,)
+              ],
+            ),
+          ),
+          Divider(
+            thickness: 2,
+            color: AppColor.black,
+          )
         ],
       ),
     );

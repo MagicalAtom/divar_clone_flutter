@@ -5,6 +5,7 @@ import 'package:sanjagh/configs/color_application.dart';
 import 'package:sanjagh/configs/fonts_application.dart';
 import 'package:sanjagh/cubit/navigation_bar_cubit.dart';
 import 'package:sanjagh/libs/size_config.dart';
+import 'package:sanjagh/screens/categories/category_screen.dart';
 import 'package:sanjagh/screens/chat/chat_list_screen.dart';
 import 'package:sanjagh/screens/main/home_screen.dart';
 import 'package:sanjagh/screens/profile/profile_screen.dart';
@@ -59,7 +60,7 @@ class MainScreen extends StatelessWidget {
                   index: state,
                   children: [
                     HomeScreen(),
-                    HomeScreen(),
+                    CategoryListScreen(),
                     HomeScreen(),
                     ChatListScreen(),
                     ProfileScreen(),

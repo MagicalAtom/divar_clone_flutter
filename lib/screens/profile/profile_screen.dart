@@ -6,6 +6,8 @@ import 'package:sanjagh/configs/size_application.dart';
 import 'package:sanjagh/screens/intro/splash_screen.dart';
 import 'package:sanjagh/screens/profile/config/style_value_config.dart';
 import 'package:sanjagh/screens/profile/my-ad_screen.dart';
+import 'package:sanjagh/screens/profile/save_screen.dart';
+import 'package:sanjagh/screens/profile/setting_screen.dart';
 import 'package:sanjagh/screens/profile/widgets/profile_items_widget.dart';
 import 'package:sanjagh/widgets/custom_text_widget.dart';
 import 'package:sanjagh/widgets/height_widget.dart';
@@ -85,7 +87,7 @@ class ProfileScreen extends StatelessWidget {
                   )),
                    ProfileItems(
                     onTap: (){
-
+                  context.push(AdSaveScreen.route);
                     },
                   text: 'ذخیره شده ها',
                   icon: const Icon(
@@ -95,7 +97,7 @@ class ProfileScreen extends StatelessWidget {
                   )),
                   ProfileItems(
                     onTap: (){
-
+                      context.push(SettingsScreen.route);
                     },
                   text: 'تنظیمات',
                   icon: const Icon(

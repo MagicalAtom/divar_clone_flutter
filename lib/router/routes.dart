@@ -7,6 +7,8 @@ import 'package:sanjagh/screens/main/home_screen.dart';
 import 'package:sanjagh/screens/main/main_screen.dart';
 import 'package:sanjagh/screens/profile/my-ad_screen.dart';
 import 'package:sanjagh/screens/profile/profile_screen.dart';
+import 'package:sanjagh/screens/profile/save_screen.dart';
+import 'package:sanjagh/screens/profile/setting_screen.dart';
 
 GoRouter routes = GoRouter(initialLocation: SplashScreen.route, routes: [
   // splash screen
@@ -15,7 +17,6 @@ GoRouter routes = GoRouter(initialLocation: SplashScreen.route, routes: [
       builder: (context, state) {
         return SplashScreen();
       }),
-
   // home screen . main screen
   GoRoute(
       path: HomeScreen.rotue,
@@ -44,7 +45,21 @@ GoRouter routes = GoRouter(initialLocation: SplashScreen.route, routes: [
         builder: (context,state){
           return  MyAdScreen();
         }
-      )
+      ),
+
+      GoRoute(
+        path: AdSaveScreen.route,
+        builder: (context,state){
+          return  AdSaveScreen();
+        }
+      ),
+
+ GoRoute(
+        path: SettingsScreen.route,
+        builder: (context,state){
+          return  const SettingsScreen();
+        }
+      ),
 
 
 
