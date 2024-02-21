@@ -5,6 +5,7 @@ import 'package:sanjagh/screens/chat/chat_list_screen.dart';
 import 'package:sanjagh/screens/intro/splash_screen.dart';
 import 'package:sanjagh/screens/main/home_screen.dart';
 import 'package:sanjagh/screens/main/main_screen.dart';
+import 'package:sanjagh/screens/profile/my-ad_screen.dart';
 import 'package:sanjagh/screens/profile/profile_screen.dart';
 
 GoRouter routes = GoRouter(initialLocation: SplashScreen.route, routes: [
@@ -35,5 +36,16 @@ GoRouter routes = GoRouter(initialLocation: SplashScreen.route, routes: [
         builder: (context,state){
           return  ChatListScreen();
         }
+      ),
+
+
+        GoRoute(
+        path: MyAdScreen.route,
+        builder: (context,state){
+          return  MyAdScreen();
+        }
       )
+
+
+
 ]);

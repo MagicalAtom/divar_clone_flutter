@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sanjagh/configs/color_application.dart';
 import 'package:sanjagh/configs/fonts_application.dart';
 import 'package:sanjagh/configs/size_application.dart';
+import 'package:sanjagh/screens/intro/splash_screen.dart';
 import 'package:sanjagh/screens/profile/config/style_value_config.dart';
+import 'package:sanjagh/screens/profile/my-ad_screen.dart';
 import 'package:sanjagh/screens/profile/widgets/profile_items_widget.dart';
 import 'package:sanjagh/widgets/custom_text_widget.dart';
 import 'package:sanjagh/widgets/height_widget.dart';
@@ -71,6 +74,9 @@ class ProfileScreen extends StatelessWidget {
               dividerProfile, 
               height(10),
               ProfileItems(
+                onTap: (){
+                  context.push(MyAdScreen.route);
+                },
                   text: 'آگهی های من',
                   icon: const Icon(
                     Icons.ad_units_rounded,
@@ -78,6 +84,9 @@ class ProfileScreen extends StatelessWidget {
                     color: AppColor.main,
                   )),
                    ProfileItems(
+                    onTap: (){
+
+                    },
                   text: 'ذخیره شده ها',
                   icon: const Icon(
                     Icons.save,
@@ -85,6 +94,9 @@ class ProfileScreen extends StatelessWidget {
                     color: AppColor.main,
                   )),
                   ProfileItems(
+                    onTap: (){
+
+                    },
                   text: 'تنظیمات',
                   icon: const Icon(
                     Icons.settings,
