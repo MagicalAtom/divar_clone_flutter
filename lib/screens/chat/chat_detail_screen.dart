@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sanjagh/components/iconsax_icons.dart';
 import 'package:sanjagh/configs/color_application.dart';
 import 'package:sanjagh/configs/fonts_application.dart';
 import 'package:sanjagh/configs/size_application.dart';
@@ -16,9 +15,9 @@ class ChatDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: _chatTextFieldSection(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
+      // floatingActionButton: _chatTextFieldSection(),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       appBar: AppBar(
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(70),
@@ -39,15 +38,55 @@ class ChatDetailScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Directionality(
-        textDirection: TextDirection.rtl,
-        child: ListView.builder(
-          scrollDirection: Axis.vertical,
-          itemCount: messages.length,
-          itemBuilder: (context, index) {
-            return _MessageWidget(messages[index]['message'],messages[index]['date'], messages[index]['yourOwnMessage']);
-          },
-        )
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: SizeConfig.screenHeight! - 100,
+              child: Directionality(
+                textDirection: TextDirection.rtl,
+                child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: messages.length,
+                  itemBuilder: (context, index) {
+                    return _MessageWidget(messages[index]['message'],messages[index]['date'], messages[index]['yourOwnMessage']);
+                  },
+                )
+              ),
+            ),
+            Material(
+        color: Colors.grey[200],
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    keyboardType: TextInputType.text,
+                    maxLines: null,
+                    autofocus: true,
+                    // controller: _textController,
+                    decoration:  InputDecoration(
+                      hintText: 'پیام خود را بنویسید',
+                      hintStyle: TextStyle(color: Colors.black,fontFamily: Font.name('b')),
+                      border: const OutlineInputBorder(borderSide: BorderSide(width: .5,color: AppColor.black,)),
+                      focusedBorder: InputBorder.none,
+                      contentPadding: const EdgeInsets.all(8),
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => (){},
+                  icon: const Icon(Icons.send,color: AppColor.main,size: 30,),
+                ),
+              ],
+            ),
+          ),
+        ),
+            ),
+          ],
+        ),
       ),
     );
   }

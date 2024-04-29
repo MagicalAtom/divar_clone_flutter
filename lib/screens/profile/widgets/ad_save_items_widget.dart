@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sanjagh/configs/color_application.dart';
+import 'package:sanjagh/widgets/width_widget.dart';
 
 import '../../../configs/fonts_application.dart';
 import '../../../configs/size_application.dart';
@@ -28,7 +30,14 @@ class AdSaveItemsWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomText(text: title,fontFamily: Font.name('b'),fontSize: Font.size(2),size: 100,),
+                  Row(
+                    children: [
+                      CustomText(text: title,fontFamily: Font.name('b'),fontSize: Font.size(2),size: 100,),
+                      const Spacer(),
+                      const Icon(Icons.delete,color: AppColor.main,size: AppSize.level4,),
+                      width(10),
+                    ],
+                  ),
                   height(20),
                   CustomText(text: status,fontFamily: Font.name('m'),fontSize: Font.size(1) + 8,color: Colors.grey[800],),
                   height(5),

@@ -8,8 +8,8 @@ AppBar appBar(String title,){
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            CustomText(text: title,fontFamily: Font.name('m'),fontSize: Font.size(2)),
+            CustomText(text: title,fontFamily: Font.name('m'),fontSize: Font.size(2) + 3),
           ],
         ),
       );
-}
+} 

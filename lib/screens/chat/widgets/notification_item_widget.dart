@@ -6,7 +6,6 @@ import 'package:sanjagh/libs/size_config.dart';
 import 'package:sanjagh/screens/profile/config/style_value_config.dart';
 import 'package:sanjagh/widgets/custom_text_widget.dart';
 import 'package:sanjagh/widgets/height_widget.dart';
-import 'package:sanjagh/widgets/width_widget.dart';
 
 class NotificationItemWidget extends StatelessWidget {
   NotificationItemWidget(

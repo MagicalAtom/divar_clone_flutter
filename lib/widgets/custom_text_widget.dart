@@ -19,7 +19,7 @@ class CustomText extends StatelessWidget {
       child: Text(
         text,
         maxLines: 1,
-        overflow: TextOverflow.ellipsis,
+        overflow: TextOverflow.fade,
         style: TextStyle(
           fontFamily: fontFamily,
           fontSize: fontSize,

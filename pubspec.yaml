@@ -45,6 +45,25 @@ dependencies:
   flutter_secure_storage: ^9.0.0
   flutter_dotenv: ^5.1.0
   smooth_page_indicator: ^1.1.0
+  intl: ^0.19.0
+  dotted_border: ^2.1.0
+  search_page: ^2.3.0
+  supabase_flutter: ^2.3.4
+  image_picker: ^1.0.7
+  loading_animation_widget: ^1.2.0+4
+  dartz: ^0.10.1
+  flutter_map: ^6.1.0
+  location: ^5.0.3
+  latlong2: ^0.9.0
+  url_launcher: ^6.2.5
+  shared_preferences: ^2.2.2
+  infinite_scroll_pagination: ^4.0.0
+  timeago: ^3.6.1
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  cool_alert: ^2.0.1
+  image_cropper: ^5.0.1
+  
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +75,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.9
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -69,8 +90,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/image/home.jpg
+    - assets/image/not-found.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sanjagh/components/iconsax_icons.dart';
 import 'package:sanjagh/configs/color_application.dart';
 import 'package:sanjagh/configs/fonts_application.dart';
 import 'package:sanjagh/configs/size_application.dart';
+import 'package:sanjagh/libs/AuthManager.dart';
 import 'package:sanjagh/libs/size_config.dart';
+import 'package:sanjagh/screens/authentication/login_screen.dart';
 import 'package:sanjagh/screens/main/home_screen.dart';
 import 'package:sanjagh/widgets/custom_text_widget.dart';
 import 'package:sanjagh/widgets/height_widget.dart';
@@ -15,8 +16,17 @@ class SplashScreen extends StatelessWidget {
   static String route = '/splash';
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 2),(){
-      context.go(HomeScreen.rotue);
+    Future.delayed(const Duration(seconds: 2),() async {
+      bool login = await AuthManager.isLogin();
+      if(login){
+        if(context.mounted){
+          context.go(HomeScreen.rotue);
+        }
+      }else{
+        if(context.mounted){
+          context.go(LoginScreen.route);
+        }
+      }
     });
     return Scaffold(
       backgroundColor: AppColor.main,

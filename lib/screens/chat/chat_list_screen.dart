@@ -12,10 +12,15 @@ class ChatListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: CustomText(
-          text: 'چت سنجاق',
-          fontFamily: Font.name('m'),
-          fontSize: Font.size(3),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            CustomText(
+              text: 'چت سنجاق',
+              fontFamily: Font.name('m'),
+              fontSize: Font.size(3),
+            ),
+          ],
         ),
       ),
       body: SafeArea(
